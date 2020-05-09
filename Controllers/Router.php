@@ -39,7 +39,7 @@ class Router {
         //GESTION DES ERREURS
         catch(Exception $e) {
             $errorMsg = $e->getMessage();
-
+            echo ("debug".$errorMsg);
             $this->_view = new View("404");
             $this->_view->generateError(array("errorMsg" => $errorMsg));
         }

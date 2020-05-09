@@ -7,7 +7,7 @@ class ControllerLogin extends Model {
 
     public function __construct($url)
     {
-        if (isset($url) && !(is_string ($url)))
+        if (isset($url) && !(is_string ($url)) && (count($url) > 1))
         {
             throw new Exception("Page introuvable");
         } else {
@@ -17,13 +17,6 @@ class ControllerLogin extends Model {
 
     private function login() 
     {
-
-        //$this->_UsersManager = new UsersManager;
-        //$users = $this->_UsersManager->getUsers();
-
-        //$numberModules = $this->getTableLigneNumber("Modules");
-        //$numberPraticiens = $this->getTableLigneNumber("Praticiens");
-        //$numberFlash = $this->getNumberTotal("Utilisation","NbFlashs");
 
         $data = array(
             "Modules" => 0,

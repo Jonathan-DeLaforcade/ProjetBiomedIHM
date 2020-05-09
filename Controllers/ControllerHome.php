@@ -2,7 +2,7 @@
 
 require_once("Views/View.php");
 
-class ControllerHome extends Auth {
+class ControllerHome extends Model {
     private $_UsersManager;
     private $_view;
 
@@ -10,6 +10,7 @@ class ControllerHome extends Auth {
     {
         $auth = new Auth;
         $auth->restrict();
+        
         if (isset($url) && !(is_string ($url)) && (count($url) > 1))
         {
             throw new Exception("Page introuvable");
