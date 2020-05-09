@@ -6,7 +6,7 @@ abstract class Bdd {
         self::$_bdd = new mysqli('vps779296.ovh.net', 'projetbts', 'btssnir/sql', 'ProjetBIOMED');
     }
 
-    protected function getBdd()
+    public function getBdd()
     {
         if(self::$_bdd == null)
         {
@@ -14,4 +14,6 @@ abstract class Bdd {
         }
         return self::$_bdd;
     }
+
+
 }

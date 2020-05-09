@@ -11,11 +11,29 @@ class View
         $this->_t = $action;
     }
 
-    public function generate($data)
+    public function generateLogin($data)
     {
         $content = $this->generateFile($this->_file, $data);
 
-        $view = $this->generateFile("Views/Template.php",array("t" => $this->_t,"content" => $content));
+        $view = $this->generateFile("Views/TemplateLogin.php",array("t" => $this->_t,"content" => $content));
+
+        echo $view;
+    }
+
+    public function generateNotLogin($data)
+    {
+        $content = $this->generateFile($this->_file, $data);
+
+        $view = $this->generateFile("Views/TemplateNotLogin.php",array("t" => $this->_t,"content" => $content));
+
+        echo $view;
+    }
+
+    public function generateError($data)
+    {
+        $content = $this->generateFile($this->_file, $data);
+
+        $view = $this->generateFile("Views/TemplateError.php",array("t" => $this->_t,"content" => $content));
 
         echo $view;
     }

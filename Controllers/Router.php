@@ -40,8 +40,8 @@ class Router {
         catch(Exception $e) {
             $errorMsg = $e->getMessage();
 
-            $this->_view = new View("Error");
-            $this->_view->generate(array("errorMsg" => $errorMsg));
+            $this->_view = new View("404");
+            $this->_view->generateError(array("errorMsg" => $errorMsg));
         }
     }
 }

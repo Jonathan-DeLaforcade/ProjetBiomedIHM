@@ -2,12 +2,14 @@
 
 require_once("Views/View.php");
 
-class ControllerHome extends Model {
+class ControllerHome extends Auth {
     private $_UsersManager;
     private $_view;
 
     public function __construct($url)
     {
+        $auth = new Auth;
+        $auth->restrict();
         if (isset($url) && !(is_string ($url)) && (count($url) > 1))
         {
             throw new Exception("Page introuvable");
@@ -33,7 +35,7 @@ class ControllerHome extends Model {
         );
 
         $this->_view = new View('Home');
-        $this->_view->generate(
+        $this->_view->generateLogin(
             array(
                 'users' => $users, 
                 'stats' => $data
